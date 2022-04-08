@@ -1,4 +1,4 @@
 package com.metadevs.Mc;
 
-public class Worker {
+public class Employee {
 }
