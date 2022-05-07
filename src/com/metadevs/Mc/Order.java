@@ -1,5 +1,7 @@
 package com.metadevs.Mc;
 
+import java.util.ArrayList;
+
 public class Order {
     int rusburger;
     int sirburger;
@@ -10,6 +12,7 @@ public class Order {
     int buratino;
     int numberOrder;
     static int countOrders = 0;
+    static ArrayList<Order> orders = new ArrayList<Order>();
 
     {
         rusburger = 0;
@@ -94,6 +97,8 @@ public class Order {
     public static void printAllSelectedPositionInOrder(Order order) {
         if (getSumOfOrderPositions(order) > 0)
             System.out.println("Сейчас в заказе: ");
+        else
+            System.out.println("Заказ пуст");
         if (order.rusburger > 0)
             System.out.println("Русбургер - " + order.rusburger);
         if (order.sirburger > 0)
@@ -120,12 +125,4 @@ public class Order {
     }
 
     //TODO придумать два метода, которые сокращают все методы выше
-
-    public static void main(String[] args) {
-        Order orrr = new Order();
-        System.out.println(orrr.numberOrder);
-        Order orrre = new Order();
-        System.out.println(orrre.numberOrder);
-
-    }
 }

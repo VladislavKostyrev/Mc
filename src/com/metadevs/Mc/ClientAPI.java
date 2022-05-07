@@ -6,8 +6,9 @@ public class ClientAPI {
     static Scanner scanner = new Scanner(System.in);
 
     public static void startMenu() {
-        Order order = new Order();
-        System.out.println("Нажмите Enter чтобы сделать заказ");       //TODO сделать нажатие ентера
+        Order order = new Order();                                      //TODO сделать автоматическое создание номера заказа?
+        Order.orders.add(order);
+        System.out.println("Нажмите Enter чтобы сделать заказ");       //TODO сделать нажатие ''нтера
         makeOrder(order);
     }
 
@@ -123,10 +124,11 @@ public class ClientAPI {
         order.mayo = 0;
         order.baikal = 0;
         order.buratino = 0;
+        makeOrder(order);
     }
 
-    public static void confirmOrder(Order order) {
-
+    public static Order confirmOrder(Order order) {
+        return order;
     }
 
     public static void showOrderNavigationMenu() {
@@ -156,8 +158,8 @@ public class ClientAPI {
     }
 
     public static void main(String[] args) {
-        Order order = new Order();                                     //TODO сделать кнопку "начать" и там создается новый заказ, возврат туда только после конфирм ордер
+//        Order order = new Order();                                     //TODO сделать кнопку "начать" и там создается новый заказ, возврат туда только после конфирм ордер
         startMenu();                                                    //TODO заказу каждый раз будет присваиваться уникальное имя
-        System.out.printf(String.valueOf(order.rusburger));
+//        System.out.printf(String.valueOf(order.rusburger));
     }
 }
